@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">CoffeShop</string>
+    <string name="title_activity_splash2">SplashActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="todo">TODO</string>
+    <string name="choice_coffee">Choice  Coffee</string>
+    <string name="get_started">get started</string>
+    <string name="choice_your_nfavourite_coffee">Choice your\nFavourite Coffee</string>
+    <string name="search_anything">Search anything...</string>
+
 </resources>
