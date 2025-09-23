@@ -10,5 +10,10 @@
     <string name="choice_your_nfavourite_coffee">Choice your\nFavourite Coffee</string>
     <string name="search_anything">Search anything...</string>
     <string name="popular_coffees">Popular Coffees</string>
+    <string name="explorer">Explorer</string>
+    <string name="cart">Cart</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="my_order">My order</string>
+    <string name="category">Category</string>
 
 </resources>

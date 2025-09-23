@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoffeShop">
         <activity
-            android:name=".SplashActivity2"
+            android:name=".Activity.SplashActivity2"
             android:exported="true"
             android:label="@string/title_activity_splash2" >
             <intent-filter>
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true">
 
         </activity>
