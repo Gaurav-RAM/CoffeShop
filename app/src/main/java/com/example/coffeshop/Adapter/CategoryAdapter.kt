@@ -11,17 +11,19 @@ import com.example.coffeshop.Domain.CategoryModel
 import com.example.coffeshop.R
 import com.example.coffeshop.databinding.ViewholdercategoryBinding
 
-class CategoryAdapter(val items: MutableList<CategoryModel>) :
+class CategoryAdapter(private var items: MutableList<CategoryModel>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
-        private lateinit var context: Context
-        private var selectedPosition=-1
-    private var  lastSelectedPosition=-1
+    private lateinit var context: Context
+    private var selectedPosition = -1
+    private var lastSelectedPosition = -1
+
     // ✅ Inner ViewHolder class
     inner class ViewHolder(val binding: ViewholdercategoryBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        context = parent.context
         val binding = ViewholdercategoryBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
@@ -33,29 +35,34 @@ class CategoryAdapter(val items: MutableList<CategoryModel>) :
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         val item = items[position]
 
-        // bind CategoryModel title to TextView
         holder.binding.titleCat.text = item.title
 
         holder.binding.root.setOnClickListener {
-            lastSelectedPosition=selectedPosition
-            selectedPosition=position
+            lastSelectedPosition = selectedPosition
+            selectedPosition = position
             notifyItemChanged(lastSelectedPosition)
             notifyItemChanged(selectedPosition)
 
             Handler(Looper.getMainLooper()).postDelayed({
-
-            },500)
+                // TODO: trigger callback if needed
+            }, 500)
         }
 
-        if (selectedPosition == position){
-holder.binding.titleCat.setBackgroundResource(R.drawable.brown_full_corner_bg)
+        if (selectedPosition == position) {
+            holder.binding.titleCat.setBackgroundResource(R.drawable.brown_full_corner_bg)
             holder.binding.titleCat.setTextColor(context.resources.getColor(R.color.white))
-        }else{
-
+        } else {
             holder.binding.titleCat.setBackgroundResource(R.drawable.white_full_corner_bg)
             holder.binding.titleCat.setTextColor(context.resources.getColor(R.color.darkBrown))
         }
     }
 
     override fun getItemCount(): Int = items.size
+
+    // ✅ New method for updating data
+    fun updateData(newItems: List<CategoryModel>) {
+        items.clear()
+        items.addAll(newItems)
+        notifyDataSetChanged()
+    }
 }
