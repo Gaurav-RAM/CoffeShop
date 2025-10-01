@@ -15,5 +15,7 @@
     <string name="wishlist">Wishlist</string>
     <string name="my_order">My order</string>
     <string name="category">Category</string>
+    <string name="enter_your_disconnect_code">Enter Your Disconnect Code</string>
+    <string name="apply">Apply</string>
 
 </resources>

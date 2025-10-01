@@ -2,11 +2,13 @@ package com.example.coffeshop.Adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.coffeshop.Activity.ItemsListActivity
 import com.example.coffeshop.Domain.CategoryModel
 import com.example.coffeshop.R
 import com.example.coffeshop.databinding.ViewholdercategoryBinding
@@ -44,7 +46,12 @@ class CategoryAdapter(private var items: MutableList<CategoryModel>) :
             notifyItemChanged(selectedPosition)
 
             Handler(Looper.getMainLooper()).postDelayed({
-                // TODO: trigger callback if needed
+                val intent = Intent(context, ItemsListActivity::class.java).apply {
+                    // Pass data to next activity
+                    putExtra("categoryId", item.id)      // example
+                    putExtra("categoryTitle", item.title)
+                }
+                context.startActivity(intent)
             }, 500)
         }
 
