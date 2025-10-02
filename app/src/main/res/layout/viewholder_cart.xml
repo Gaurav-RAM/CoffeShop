@@ -99,7 +99,7 @@
             app:layout_constraintStart_toEndOf="@+id/picCart" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/feeEachItem"
             android:layout_width="57dp"
             android:layout_height="16dp"
             android:text="$0"
